@@ -17,7 +17,6 @@ pipeline{
 		sh "npm run sonar"
 		}
     }
-    }
 stage('UploadArtifactintoNexus'){
 	steps{
 	nodejs(nodeJSInstallationName: 'nodejs16.19.0'){
@@ -25,6 +24,7 @@ stage('UploadArtifactintoNexus'){
     }
 }
 	}
+}
 }
 }
 }
