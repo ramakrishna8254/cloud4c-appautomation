@@ -15,15 +15,9 @@ pipeline{
 		sh "npm run coverage-lcov"
 		sh "npm install sonar-scanner"
 		sh "npm run sonar"
+		sh "npm publish"
 		}
     }
-stage('UploadArtifactintoNexus'){
-	steps{
-	nodejs(nodeJSInstallationName: 'nodejs16.19.0'){
-	    sh "npm publish"
-    }
-}
-	}
 }
 }
 }
