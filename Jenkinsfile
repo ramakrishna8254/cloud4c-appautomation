@@ -20,9 +20,11 @@ pipeline{
     }
 stage('UploadArtifactintoNexus'){
 	steps{
+	nodejs(nodeJSInstallationName: 'nodejs16.19.0'){
 	    sh "npm publish"
     }
 }
 	}
+}
 }
 }
