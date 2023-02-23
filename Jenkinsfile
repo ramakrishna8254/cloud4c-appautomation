@@ -5,10 +5,13 @@ pipeline{
 		   steps{
        git 'https://github.com/ramakrishna8254/cloud4c-appautomation.git'}
   }
- stage('Build'){
+ stage('Build * Sonar Analysis'){
 	 steps{
         nodejs(nodeJSInstallationName: 'nodejs16.19.0'){
         sh "npm install"
+		withSonarQubeEnv('sonar'){
+		sh "npm install --save-dev mocha chai"
+		}
     }
     }
 }
