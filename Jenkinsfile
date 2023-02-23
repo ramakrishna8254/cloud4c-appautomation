@@ -18,6 +18,9 @@ pipeline{
 		}
     }
     }
+stage('UploadArtifactintoNexus'){
+	    sh "npm publish"
+    }
 }
 	}
 }
